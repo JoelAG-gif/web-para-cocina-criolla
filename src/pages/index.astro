@@ -1,0 +1,1063 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocina Criolla — Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-img"><img src="/images/logo.png" alt="Logo"></div>
+    <div><div class="logo-main">Cocina Criolla</div><div class="logo-sub">Restaurant · Est. 2010</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#reservar">Reservar</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#reservar" class="nav-cta">🍽️ Reservar Mesa</a>
+    <button class="hamburger" onclick="toggleDrawer()">☰</button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="#menu" onclick="closeDrawer()">🍽️ Menú</a>
+  <a href="#galeria" onclick="closeDrawer()">📸 Galería</a>
+  <a href="#resenas" onclick="closeDrawer()">⭐ Reseñas</a>
+  <a href="#reservar" onclick="closeDrawer()">📅 Reservar Mesa</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-collage">
+    <div><img src="/images/lomo2.png" alt="Lomo Saltado"></div>
+    <div><img src="/images/ceviche.png" alt="Ceviche Clásico"></div>
+    <div><img src="/images/arroz_mare.png" alt="Arroz con Mariscos"></div>
+    <div><img src="/images/aji_gallina.png" alt="Ají de Gallina"></div>
+    <div><img src="/images/arroz_pato.png" alt="Arroz con Pato"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="htag-dot"></span>Comida Peruana Auténtica</div>
+      <h1 class="hero-title">El sabor de<br>casa, <em>siempre.</em></h1>
+      <p class="hero-desc">Más de 15 años sirviendo la cocina criolla peruana más auténtica. Ingredientes frescos, recetas tradicionales y el amor de siempre en cada plato.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-red">🍴 Ver Menú</a>
+        <a href="#reservar" class="btn-outline">📅 Reservar Mesa →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-stats">
+        <div class="hcs"><div class="hcs-n">15+</div><div class="hcs-l">Años</div></div>
+        <div class="hcs"><div class="hcs-n">4.9★</div><div class="hcs-l">Rating</div></div>
+        <div class="hcs"><div class="hcs-n">5K+</div><div class="hcs-l">Clientes</div></div>
+      </div>
+      <div class="hc-dish"><img src="/images/ceviche.png" alt="Ceviche Clásico"></div>
+      <div class="hc-lbl">🏆 Plato estrella — Ceviche Clásico</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-text">
+      <div class="strip-lbl">Nuestra Historia</div>
+      <div class="strip-title">Tradición familiar desde 2010</div>
+      <div class="strip-desc">Nacimos con la misión de llevar la verdadera sazón criolla a tu mesa. Cada receta es un legado familiar preparado con ingredientes frescos del día.</div>
+    </div>
+    <div class="strip-badges">
+      <div class="sb"><div class="sb-n">15+</div><div class="sb-l">Años de sabor</div></div>
+      <div class="sb"><div class="sb-n">4.9★</div><div class="sb-l">En Google</div></div>
+      <div class="sb"><div class="sb-n">5K+</div><div class="sb-l">Familias atendidas</div></div>
+      <div class="sb"><div class="sb-n">🚗</div><div class="sb-l">Delivery diario</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features reveal">
+  <div class="feat"><span class="feat-icon">🌿</span><div class="feat-title">Ingredientes Frescos</div><div class="feat-desc">Compramos diario en el mercado para garantizar frescura en cada plato</div></div>
+  <div class="feat"><span class="feat-icon">👨‍🍳</span><div class="feat-title">Recetas Tradicionales</div><div class="feat-desc">Recetas heredadas de generación en generación con sazón auténtica</div></div>
+  <div class="feat"><span class="feat-icon">🚗</span><div class="feat-title">Delivery Disponible</div><div class="feat-desc">Pedidos a domicilio por WhatsApp con entrega rápida y segura</div></div>
+  <div class="feat"><span class="feat-icon">❤️</span><div class="feat-title">Hecho con Amor</div><div class="feat-desc">Cada plato preparado con la dedicación y pasión de siempre</div></div>
+</div>
+
+<!-- ===== MENU ===== -->
+<div class="menu-bg" id="menu">
+  <div class="menu-inner">
+    <div class="reveal">
+      <div class="sec-lbl">Nuestro Menú</div>
+      <div class="sec-title">Los mejores <em>sabores</em> peruanos</div>
+      <div class="sec-sub">Platos preparados con ingredientes frescos del día. El menú se actualiza según disponibilidad.</div>
+    </div>
+    <div class="menu-tabs" id="menuTabs">
+      <button class="mtab active" data-cat="all">🍽️ Todo</button>
+      <button class="mtab" data-cat="desayuno">☀️ Desayunos</button>
+      <button class="mtab" data-cat="entradas">🥗 Entradas</button>
+      <button class="mtab" data-cat="almuerzo">🍲 Almuerzos</button>
+      <button class="mtab" data-cat="carta">⭐ A la Carta</button>
+      <button class="mtab" data-cat="cena">🌙 Cenas</button>
+      <button class="mtab" data-cat="bebidas">🥤 Bebidas</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gal-bg" id="galeria">
+  <div class="gal-inner">
+    <div class="reveal">
+      <div class="sec-lbl">Galería</div>
+      <div class="sec-title">Nuestros <em>platos</em></div>
+      <div class="sec-sub">Una muestra de lo que preparamos con amor cada día para ti.</div>
+    </div>
+    <div class="gal-grid">
+      <div class="gi reveal"><img src="/images/lomo2.png" alt="Lomo Saltado"><div class="gi-ov"><div><div class="gi-lbl">Lomo Saltado</div><div class="gi-sub">El clásico infaltable</div></div></div></div>
+      <div class="gi reveal"><img src="/images/ceviche.png" alt="Ceviche"><div class="gi-ov"><div><div class="gi-lbl">Ceviche Clásico</div><div class="gi-sub">Fresco y picantito</div></div></div></div>
+      <div class="gi reveal"><img src="/images/arroz_mare.png" alt="Arroz con Mariscos"><div class="gi-ov"><div><div class="gi-lbl">Arroz con Mariscos</div><div class="gi-sub">Mar en cada bocado</div></div></div></div>
+      <div class="gi reveal"><img src="/images/aji_gallina.png" alt="Ají de Gallina"><div class="gi-ov"><div><div class="gi-lbl">Ají de Gallina</div><div class="gi-sub">Cremoso y delicioso</div></div></div></div>
+      <div class="gi reveal"><img src="/images/arroz_pato.png" alt="Arroz con Pato"><div class="gi-ov"><div><div class="gi-lbl">Arroz con Pato</div><div class="gi-sub">Norteño y sabroso</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="rev-bg" id="resenas">
+  <div class="rev-inner">
+    <div class="reveal">
+      <div class="sec-lbl">Testimonios</div>
+      <div class="sec-title">Lo que dicen <em>nuestros comensales</em></div>
+      <div class="sec-sub">Más de 5,000 familias han disfrutado nuestra cocina.</div>
+    </div>
+    <div class="rev-grid">
+      <div class="rc reveal">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-badge">Cliente frecuente</div></div>
+        <p class="rc-text">El mejor lomo saltado que he probado. La sazón es increíble, los ingredientes fresquísimos y la atención muy amable. Ya voy todos los domingos en familia.</p>
+        <div class="rc-auth"><div class="rc-av">MR</div><div><div class="rc-name">María R.</div><div class="rc-date">Hace 1 semana · Google</div></div></div>
+      </div>
+      <div class="rc reveal">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-badge">Delivery</div></div>
+        <p class="rc-text">Pedí delivery y llegó en 30 minutos, calientito y perfecto. El ceviche estaba riquísimo, muy fresco. Definitivamente repetiré. 100% recomendado.</p>
+        <div class="rc-auth"><div class="rc-av">CL</div><div><div class="rc-name">Carlos L.</div><div class="rc-date">Hace 2 semanas · Google</div></div></div>
+      </div>
+      <div class="rc reveal">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-badge">Visita familiar</div></div>
+        <p class="rc-text">Vine con toda la familia para el cumpleaños de mi mamá y quedamos encantados. El ají de gallina es exquisito y las porciones generosas.</p>
+        <div class="rc-auth"><div class="rc-av">AP</div><div><div class="rc-name">Ana P.</div><div class="rc-date">Hace 3 semanas · Google</div></div></div>
+      </div>
+    </div>
+    <div class="rating-box reveal">
+      <div class="rb-big"><div class="rb-n">4.9</div><div class="rb-stars">★★★★★</div><div class="rb-lbl">528 reseñas en Google</div></div>
+      <div style="width:1px;height:65px;background:var(--border)"></div>
+      <div class="rb-bars">
+        <div class="rb-row"><div class="rb-s">★★★★★</div><div class="rb-bar"><div class="rb-fill" style="width:88%"></div></div><div class="rb-pct">88%</div></div>
+        <div class="rb-row"><div class="rb-s">★★★★☆</div><div class="rb-bar"><div class="rb-fill" style="width:10%"></div></div><div class="rb-pct">10%</div></div>
+        <div class="rb-row"><div class="rb-s">★★★☆☆</div><div class="rb-bar"><div class="rb-fill" style="width:2%"></div></div><div class="rb-pct">2%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESERVAR -->
+<section class="res-sec" id="reservar">
+  <div class="res-card reveal">
+    <div class="res-img"><img src="/images/banner.png" alt="Restaurante"></div>
+    <div class="res-body">
+      <div class="res-lbl">Reservas & Delivery</div>
+      <div class="res-title">¿Listo para disfrutar?</div>
+      <div class="res-desc">Reserva tu mesa o haz tu pedido en segundos por WhatsApp. Confirmamos en menos de 5 minutos.</div>
+      <div class="res-info">
+        <div class="res-row"><div class="res-icon">📍</div>Av. La Marina 456, Lima</div>
+        <div class="res-row"><div class="res-icon">🕐</div>Lun–Dom: 12:00pm – 9:00pm</div>
+        <div class="res-row"><div class="res-icon">📱</div>+51 999 999 999</div>
+        <div class="res-row"><div class="res-icon">🚗</div>Delivery disponible todo el día</div>
+      </div>
+      <a href="https://wa.me/51999999999?text=Hola!%20Quiero%20reservar%20en%20Cocina%20Criolla%20🍽️" target="_blank" class="wa-btn" onclick="showToast('Redirigiendo a WhatsApp...')">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reservar / Pedir por WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="sec-lbl">Formulario</div>
+    <div class="sec-title" style="margin-bottom:1.5rem">Reserva tu <em>mesa</em></div>
+    <div class="form-row">
+      <div class="ff"><label>Nombre</label><input type="text" placeholder="Tu nombre completo" id="fn"></div>
+      <div class="ff"><label>Teléfono</label><input type="tel" placeholder="+51 999 999 999" id="fp"></div>
+    </div>
+    <div class="form-row">
+      <div class="ff"><label>Fecha</label><input type="date" id="fd"></div>
+      <div class="ff"><label>Hora</label><input type="time" id="fh" min="12:00" max="21:00"></div>
+    </div>
+    <div class="form-row">
+      <div class="ff"><label>N° Personas</label>
+        <select id="fp2"><option value="">Selecciona...</option><option>1 persona</option><option>2 personas</option><option>3-4 personas</option><option>5-6 personas</option><option>7 o más</option></select>
+      </div>
+      <div class="ff"><label>Tipo de pedido</label>
+        <select id="ftipo"><option value="">Selecciona...</option><option>Mesa en local</option><option>Delivery a domicilio</option><option>Recoger en tienda</option></select>
+      </div>
+    </div>
+    <div class="ff"><label>¿Qué deseas pedir? (opcional)</label><textarea id="fnote" placeholder="Ej: 2 lomos saltados, 1 ceviche..."></textarea></div>
+    <button class="form-submit" onclick="sendReserva()">Enviar por WhatsApp 📲</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="ft-logo">
+          <div class="ft-logo-img"><img src="/images/logo.png" alt="Logo"></div>
+          <div><div class="logo-main" style="color:#fff">Cocina Criolla</div><div class="logo-sub">Restaurant · Est. 2010</div></div>
+        </div>
+        <p class="ft-desc">Más de 15 años llevando el sabor auténtico de la cocina peruana a tu mesa. Ingredientes frescos y recetas de siempre.</p>
+      </div>
+      <div>
+        <div class="ft-ttl">Menú</div>
+        <div class="ft-links">
+          <a href="#menu">☀️ Desayunos</a>
+          <a href="#menu">🥗 Entradas</a>
+          <a href="#menu">🍲 Almuerzos</a>
+          <a href="#menu">⭐ A la Carta</a>
+          <a href="#menu">🥤 Bebidas</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-ttl">Información</div>
+        <div class="ft-links">
+          <a href="#">📍 Av. La Marina 456, Lima</a>
+          <a href="#">🕐 Lun–Dom: 12pm – 9pm</a>
+          <a href="#">📱 +51 999 999 999</a>
+          <a href="#reservar">📅 Reservar Mesa</a>
+          <a href="#resenas">⭐ Ver Reseñas</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2025 Cocina Criolla Restaurant. Todos los derechos reservados.</span><span>Diseñado con ❤️ para negocios locales</span></div>
+  </div>
+</footer>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div class="admin-overlay" id="adminOverlay">
+  <!-- LOGIN -->
+  <div id="loginBox" class="login-box">
+    <div class="login-logo">
+      <span class="logo-main">Cocina Criolla</span>
+      <p>Panel de Administración</p>
+    </div>
+    <div class="login-title">Iniciar Sesión</div>
+    <div class="login-sub">Ingresa la contraseña del restaurante</div>
+    <div class="login-err" id="loginErr">Contraseña incorrecta. Intenta de nuevo.</div>
+    <div class="ff"><label>Contraseña</label><input type="password" id="adminPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="login-btn" onclick="doLogin()">Entrar al Panel →</button>
+    <div style="text-align:center;margin-top:1rem;font-size:.72rem;color:var(--muted)">Contraseña por defecto: <strong>admin123</strong></div>
+  </div>
+
+  <!-- PANEL -->
+  <div id="adminPanel" class="admin-modal" style="display:none">
+    <div class="admin-header">
+      <div class="admin-header-left">
+        <div class="admin-icon">⚙️</div>
+        <div>
+          <div class="admin-title">Panel de Administración</div>
+          <div class="admin-sub">Cocina Criolla Restaurant</div>
+        </div>
+      </div>
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="atab active" onclick="showAdminTab('platos',this)">🍽️ Platos</button>
+      <button class="atab" onclick="showAdminTab('secciones',this)">📋 Secciones</button>
+      <button class="atab" onclick="showAdminTab('config',this)">🔧 Configuración</button>
+    </div>
+    <div class="admin-body" id="adminBody"></div>
+  </div>
+</div>
+
+
+
+<!-- ===== CART BACKDROP ===== -->
+<div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div class="cart-header-left">
+      <div class="cart-icon">🛒</div>
+      <div>
+        <div class="cart-title">Tu Pedido</div>
+        <div class="cart-count-badge" id="cartCountBadge">0 productos</div>
+      </div>
+    </div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+
+  <!-- Tipo de servicio -->
+  <div class="delivery-selector">
+    <div class="ds-label">¿Cómo lo deseas?</div>
+    <div class="ds-options">
+      <div class="ds-opt selected" data-type="local" onclick="selectDeliveryType(this,'local')">
+        <div class="ds-opt-icon">🍽️</div>
+        <div class="ds-opt-label">Comer aquí</div>
+      </div>
+      <div class="ds-opt" data-type="delivery" onclick="selectDeliveryType(this,'delivery')">
+        <div class="ds-opt-icon">🛵</div>
+        <div class="ds-opt-label">Delivery</div>
+      </div>
+      <div class="ds-opt" data-type="recoger" onclick="selectDeliveryType(this,'recoger')">
+        <div class="ds-opt-icon">🏃</div>
+        <div class="ds-opt-label">Recoger</div>
+      </div>
+    </div>
+    <div class="addr-field" id="addrField">
+      <input type="text" id="deliveryAddr" class="cart-input" placeholder="📍 Tu dirección de entrega...">
+    </div>
+    <div class="time-field" id="timeField">
+      <div class="time-field-grid" id="timeFieldGrid">
+        <input type="date" id="cartDate" class="cart-input" placeholder="📅 Fecha">
+        <input type="time" id="cartTime" class="cart-input" placeholder="🕒 Hora">
+      </div>
+    </div>
+  </div>
+
+  <!-- Items -->
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🍽️</div>
+      <div class="cart-empty-text">Tu pedido está vacío</div>
+      <div class="cart-empty-sub">Agrega platos desde el menú</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="cart-footer">
+    <div class="cart-name-row">
+      <input type="text" class="cart-input" id="cartName" placeholder="👤 Tu nombre *">
+      <input type="tel" class="cart-input" id="cartPhone" placeholder="📱 Tu teléfono">
+    </div>
+    <div class="cart-note">
+      <label>Nota adicional (opcional)</label>
+      <textarea id="cartNote" placeholder="Sin picante, sin cebolla, etc..."></textarea>
+    </div>
+    <div class="cart-subtotal">
+      <span id="cartItemCount">0 productos</span>
+      <span id="cartSubtotal">S/. 0.00</span>
+    </div>
+    <div class="cart-total-row">
+      <div class="cart-total-label">Total</div>
+      <div class="cart-total-price" id="cartTotal">S/. 0.00</div>
+    </div>
+    <button class="cart-wa-btn" id="cartWaBtn" onclick="sendCartWA()" disabled>
+      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar Pedido por WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- Cart FAB -->
+<button class="cart-fab" id="cartFab" onclick="openCart()">
+  🛒 Ver Pedido
+  <span class="cart-badge" id="cartFabBadge">0</span>
+</button>P
+
+<script is:inline>
+
+// ===== DATA =====
+const IMGS = {"arroz_pato":"/images/arroz_pato.png",
+"seco2":"/images/seco2.png",
+"logo":"/images/logo.png",
+"arroz_mare":"/images/arroz_mare.png",
+"estofado":"/images/estofado.png",
+"camarones":"/images/camarones.png",
+"sopa_verde":"/images/sopa_verde.png",
+"tallarines":"/images/tallarines.png",
+"caldo":"/images/caldo.png",
+"pollo_guiso":"/images/pollo_guiso.png",
+"lomo2":"/images/lomo2.png",
+"cuy":"/images/cuy.png",
+"ceviche":"/images/ceviche.png",
+"causa":"/images/causa.png",
+"banner":"/images/banner.png",
+"aji_gallina":"/images/aji_gallina.png"};
+
+let dishes = JSON.parse(localStorage.getItem('cc_dishes') || 'null') || [{"id": "d1", "name": "Causa Lime\u00f1a", "cat": "entradas", "price": 18, "desc": "Capas de papa amarilla con relleno de pollo, palta y huevo. Un cl\u00e1sico lime\u00f1o.", "badge": "popular", "available": true, "img": "causa"}, {"id": "d2", "name": "Ceviche Cl\u00e1sico", "cat": "almuerzo", "price": 32, "desc": "Pescado fresco marinado en lim\u00f3n, aj\u00ed limo, cebolla y cilantro. Con choclo y cancha.", "badge": "popular", "available": true, "img": "ceviche"}, {"id": "d3", "name": "Lomo Saltado", "cat": "almuerzo", "price": 35, "desc": "Tiras de lomo fino salteadas con tomate, cebolla, sillao y papas fritas. Con arroz.", "badge": "popular", "available": true, "img": "lomo2"}, {"id": "d4", "name": "Aj\u00ed de Gallina", "cat": "almuerzo", "price": 28, "desc": "Pollo desmenuzado en salsa cremosa de aj\u00ed amarillo, nueces y pan. Con arroz y huevo.", "badge": "", "available": true, "img": "aji_gallina"}, {"id": "d5", "name": "Seco de Res", "cat": "almuerzo", "price": 32, "desc": "Carne de res en salsa de chicha de jora y cilantro. Con frejoles y arroz.", "badge": "", "available": true, "img": "estofado"}, {"id": "d6", "name": "Arroz con Mariscos", "cat": "carta", "price": 42, "desc": "Arroz jugoso con pulpo, camarones, conchas y calamares. Un fest\u00edn del mar.", "badge": "especial", "available": true, "img": "arroz_mare"}, {"id": "d7", "name": "Arroz con Pato", "cat": "almuerzo", "price": 38, "desc": "Pato tierno sobre arroz verde con culantro. Plato norte\u00f1o inigualable.", "badge": "especial", "available": true, "img": "arroz_pato"}, {"id": "d8", "name": "Camarones al Ajillo", "cat": "carta", "price": 40, "desc": "Camarones frescos salteados en salsa de ajo y aj\u00ed amarillo. Con arroz blanco.", "badge": "nuevo", "available": true, "img": "camarones"}, {"id": "d9", "name": "Sopa Verde", "cat": "desayuno", "price": 18, "desc": "Caldo nutritivo de verduras frescas, culantro y menestras.", "badge": "", "available": true, "img": "sopa_verde"}, {"id": "d10", "name": "Caldo de Gallina", "cat": "desayuno", "price": 20, "desc": "Caldo reconfortante con presa de gallina, fideos, papa y huevo. El favorito del domingo.", "badge": "popular", "available": true, "img": "caldo"}, {"id": "d11", "name": "Tallarines Verdes", "cat": "carta", "price": 30, "desc": "Spaghetti en salsa de albahaca y queso con bistec apanado.", "badge": "", "available": true, "img": "tallarines"}, {"id": "d12", "name": "Pollo Guisado", "cat": "almuerzo", "price": 28, "desc": "Presas de pollo en salsa criolla con papas y aceitunas.", "badge": "", "available": true, "img": "pollo_guiso"}, {"id": "d13", "name": "Cuy Frito", "cat": "carta", "price": 48, "desc": "Cuy entero frito en su punto perfecto. Con ensalada criolla y choclo.", "badge": "especial", "available": true, "img": "cuy"}, {"id": "d14", "name": "Seco de Cordero", "cat": "almuerzo", "price": 36, "desc": "Cordero tierno en salsa de chicha y hierbas arom\u00e1ticas. Con frejoles y arroz.", "badge": "", "available": true, "img": "seco2"}, {"id": "d15", "name": "Chicha Morada", "cat": "bebidas", "price": 8, "desc": "Refrescante chicha morada preparada con ma\u00edz morado, pi\u00f1a y canela.", "badge": "popular", "available": true, "img": "sopa_verde"}, {"id": "d16", "name": "Emoliente", "cat": "desayuno", "price": 6, "desc": "Bebida caliente de hierbas andinas con linaza y cebada. Nutritivo y reconfortante.", "badge": "", "available": true, "img": "sopa_verde"}];
+let sections = JSON.parse(localStorage.getItem('cc_sections') || 'null') || [
+  {id:'desayuno',name:'Desayunos',icon:'☀️',enabled:true},
+  {id:'entradas',name:'Entradas',icon:'🥗',enabled:true},
+  {id:'almuerzo',name:'Almuerzos',icon:'🍲',enabled:true},
+  {id:'carta',name:'A la Carta',icon:'⭐',enabled:true},
+  {id:'cena',name:'Cenas',icon:'🌙',enabled:true},
+  {id:'bebidas',name:'Bebidas',icon:'🥤',enabled:true},
+];
+let config = JSON.parse(localStorage.getItem('cc_config') || 'null') || {
+  name:'Cocina Criolla', phone:'51966646415', address:'Av. La Marina 456, Lima',
+  hours:'Lun–Dom: 12:00pm – 9:00pm', password:'admin123'
+};
+
+function saveData(){
+  localStorage.setItem('cc_dishes', JSON.stringify(dishes));
+  localStorage.setItem('cc_sections', JSON.stringify(sections));
+  localStorage.setItem('cc_config', JSON.stringify(config));
+}
+
+// ===== MENU RENDER =====
+let activeCat = 'all';
+function renderMenu(){
+  const grid = document.getElementById('menuGrid');
+  const list = activeCat === 'all' ? dishes : dishes.filter(d=>d.cat===activeCat);
+  grid.innerHTML = '';
+  if(!list.length){
+    grid.innerHTML = '<div class="dish-empty">🍽️ No hay platos en esta sección aún.</div>';
+    return;
+  }
+  list.forEach((d,i)=>{
+    const badge = d.badge ? `<span class="dish-badge badge-${d.badge}">${d.badge}</span>` : '';
+    const imgSrc = d.imgData || (IMGS[d.img] || '') || '';
+    const el = document.createElement('div');
+    el.className = 'dish-card reveal' + (d.available ? '' : ' unavailable');
+    el.innerHTML = `
+      <div class="dish-img">
+        ${badge}
+        <img src="${imgSrc}" alt="${d.name}" loading="lazy">
+      </div>
+      <div class="dish-body">
+        <div class="dish-name">${d.name}</div>
+        <div class="dish-desc">${d.desc}</div>
+        <div class="dish-foot">
+          <div class="dish-price">S/. ${d.price}</div>
+          ${d.available ? `<a href="#reservar" class="dish-btn">Pedir →</a>` : `<span style="font-size:.72rem;color:#e74c3c;font-weight:600">No disponible</span>`}
+        </div>
+      </div>`;
+    grid.appendChild(el);
+    setTimeout(()=>el.classList.add('visible'), 50 + i*50);
+  });
+}
+
+document.getElementById('menuTabs').addEventListener('click',e=>{
+  const t = e.target.closest('.mtab'); if(!t) return;
+  document.querySelectorAll('.mtab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  activeCat = t.dataset.cat;
+  renderMenu();
+});
+
+// ===== ADMIN AUTH =====
+function openAdmin(){
+  document.getElementById('adminOverlay').classList.add('open');
+  document.getElementById('loginBox').style.display='';
+  document.getElementById('adminPanel').style.display='none';
+  document.getElementById('adminPass').focus();
+}
+// Atajo secreto: Triple-tap el logo para abrir panel admin (funciona en móvil y computadora)
+let logoClickCount = 0;
+let logoClickTimer = null;
+const navLogo = document.querySelector('.nav-logo');
+if(navLogo){
+  navLogo.addEventListener('click', function(e){
+    e.preventDefault();
+    logoClickCount++;
+    if(logoClickCount === 1){
+      logoClickTimer = setTimeout(() => logoClickCount = 0, 500);
+    }
+    if(logoClickCount === 3){
+      clearTimeout(logoClickTimer);
+      logoClickCount = 0;
+      openAdmin();
+    }
+  });
+}
+function closeAdmin(){
+  document.getElementById('adminOverlay').classList.remove('open');
+}
+document.getElementById('adminOverlay').addEventListener('click',e=>{
+  if(e.target===document.getElementById('adminOverlay')) closeAdmin();
+});
+function doLogin(){
+  const pass = document.getElementById('adminPass').value;
+  if(pass === config.password){
+    document.getElementById('loginBox').style.display='none';
+    document.getElementById('adminPanel').style.display='flex';
+    document.getElementById('adminPanel').style.flexDirection='column';
+    showAdminTab('platos', document.querySelector('.atab'));
+    document.getElementById('loginErr').classList.remove('show');
+    document.getElementById('adminPass').value='';
+  } else {
+    document.getElementById('loginErr').classList.add('show');
+  }
+}
+
+// ===== ADMIN TABS =====
+let editingId = null;
+function showAdminTab(tab, btn){
+  document.querySelectorAll('.atab').forEach(x=>x.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const body = document.getElementById('adminBody');
+  if(tab==='platos') renderAdminPlatos(body);
+  else if(tab==='secciones') renderAdminSecciones(body);
+  else if(tab==='config') renderAdminConfig(body);
+}
+
+// ===== ADMIN PLATOS =====
+function renderAdminPlatos(body){
+  editingId = null;
+  const catOptions = sections.map(s=>`<option value="${s.id}">${s.icon} ${s.name}</option>`).join('');
+  body.innerHTML = `
+    <div class="admin-form" id="addForm">
+      <div class="admin-form-title">
+        <span id="formTitle">➕ Agregar Nuevo Plato</span>
+        <button class="abtn abtn-cancel" id="cancelEditBtn" onclick="cancelEdit()" style="display:none;padding:.35rem .9rem;font-size:.72rem">✕ Cancelar edición</button>
+      </div>
+      <div class="aform-grid">
+        <div class="af"><label>Nombre del plato *</label><input type="text" id="af-name" placeholder="Ej: Lomo Saltado"></div>
+        <div class="af"><label>Precio (S/.) *</label><input type="number" id="af-price" placeholder="35" min="1"></div>
+        <div class="af"><label>Sección *</label>
+          <select id="af-cat"><option value="">Selecciona sección...</option>${catOptions}</select>
+        </div>
+        <div class="af"><label>Etiqueta</label>
+          <select id="af-badge"><option value="">Sin etiqueta</option><option value="popular">🔴 Popular</option><option value="nuevo">🟢 Nuevo</option><option value="especial">🟡 Especial</option></select>
+        </div>
+        <div class="af aform-full"><label>Descripción</label><textarea id="af-desc" placeholder="Describe brevemente el plato..."></textarea>
+          <button type="button" class="abtn ia-btn" onclick="generateDescriptionAI()" style="margin-top:.5rem;">🧠 Generar descripción con IA</button>
+        </div>
+        <div class="af aform-full">
+          <label>Foto del plato</label>
+          <div class="img-preview" id="imgPreview" onclick="document.getElementById('af-img-file').click()">
+            <div class="img-preview-text">📷 Click para subir foto<br><small style="color:var(--border)">JPG, PNG hasta 5MB</small></div>
+          </div>
+          <input type="file" id="af-img-file" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
+        </div>
+      </div>
+      <div class="aform-actions">
+        <button class="abtn abtn-add" id="saveBtn" onclick="saveDish()">➕ Agregar Plato</button>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+      <div style="font-weight:700;font-size:.9rem;color:var(--dark)">📋 Platos registrados (${dishes.length})</div>
+      <div style="font-size:.78rem;color:var(--muted)">Toca Editar para modificar precio o foto</div>
+    </div>
+    <div class="admin-dish-list" id="adminDishList"></div>`;
+  renderDishList();
+}
+
+// ===== IA DESCRIPTION GENERATOR =====
+function generateDescriptionAI(){
+  const name = document.getElementById('af-name').value.trim();
+  const catEl = document.getElementById('af-cat');
+  const catText = catEl.options[catEl.selectedIndex]?.text || '';
+  if(!name || !catText){ showToast('⚠️ Ingresa nombre y sección antes de generar'); return; }
+  let base = `Delicioso ${name}`;
+  // add generic hints based on category
+  const lc = catText.toLowerCase();
+  if(lc.includes('entrada')){
+    base += ' como entrada, ideal para abrir el apetito';
+  } else if(lc.includes('bebida')){
+    base += ' refrescante y perfecto para acompañar tu comida';
+  } else if(lc.includes('fondo')||lc.includes('principal')||lc.includes('plato')){
+    base += ' con ingredientes frescos y sabor casero';
+  } else {
+    base += ' preparado con mucho cariño';
+  }
+  base += ', preparado con ingredientes de la mejor calidad.';
+  document.getElementById('af-desc').value = base;
+  showToast('🧠 Descripción generada');
+}
+function handleImgUpload(input){
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e=>{
+    uploadedImgData = e.target.result;
+    const prev = document.getElementById('imgPreview');
+    prev.innerHTML = `<img src="${uploadedImgData}" alt="preview">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveDish(){
+  const name = document.getElementById('af-name').value.trim();
+  const price = parseFloat(document.getElementById('af-price').value);
+  const cat = document.getElementById('af-cat').value;
+  const badge = document.getElementById('af-badge').value;
+  const desc = document.getElementById('af-desc').value.trim();
+  if(!name || !price || !cat){ showToast('⚠️ Completa nombre, precio y sección'); return; }
+  if(editingId){
+    const idx = dishes.findIndex(d=>d.id===editingId);
+
+    if(idx>=0){
+      dishes[idx] = {...dishes[idx], name, price, cat, badge, desc,
+        imgData: uploadedImgData || dishes[idx].imgData};
+    }
+    showToast('✅ Plato actualizado correctamente');
+    cancelEdit();
+  } else {
+    const newDish = {
+      id:'d'+Date.now(), name, price, cat, badge, desc,
+      available:true, img:'', imgData: uploadedImgData || ''
+    };
+    dishes.unshift(newDish);
+    showToast('✅ Plato agregado al menú');
+    resetForm();
+  }
+  saveData(); renderDishList(); renderMenu();
+}
+
+function cancelEdit(){
+  editingId = null;
+  uploadedImgData = null;
+  document.getElementById('formTitle').textContent = '➕ Agregar Nuevo Plato';
+  document.getElementById('saveBtn').textContent = '➕ Agregar Plato';
+  document.getElementById('cancelEditBtn').style.display = 'none';
+  resetForm();
+}
+function resetForm(){
+  ['af-name','af-price','af-desc'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('af-cat').value='';
+  document.getElementById('af-badge').value='';
+  document.getElementById('imgPreview').innerHTML='<div class="img-preview-text">📷 Click para subir foto<br><small style="color:var(--border)">JPG, PNG hasta 5MB</small></div>';
+  uploadedImgData = null;
+}
+
+function editDish(id){
+  const d = dishes.find(x=>x.id===id); if(!d) return;
+  editingId = id;
+  uploadedImgData = null;
+  document.getElementById('af-name').value = d.name;
+  document.getElementById('af-price').value = d.price;
+  document.getElementById('af-cat').value = d.cat;
+  document.getElementById('af-badge').value = d.badge || '';
+  document.getElementById('af-desc').value = d.desc || '';
+  const imgSrc = d.imgData || (IMGS[d.img]||'');
+  const prev = document.getElementById('imgPreview');
+  prev.innerHTML = imgSrc ? `<img src="${imgSrc}" alt="preview">` : '<div class="img-preview-text">📷 Click para cambiar foto</div>';
+  document.getElementById('formTitle').textContent = `✏️ Editando: ${d.name}`;
+  document.getElementById('saveBtn').textContent = '💾 Guardar Cambios';
+  document.getElementById('cancelEditBtn').style.display = '';
+  document.getElementById('addForm').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function toggleDish(id){
+  const d = dishes.find(x=>x.id===id); if(!d) return;
+  d.available = !d.available;
+  saveData(); renderDishList(); renderMenu();
+  showToast(d.available ? `✅ "${d.name}" disponible` : `❌ "${d.name}" marcado como agotado`);
+}
+
+function deleteDish(id){
+  const d = dishes.find(x=>x.id===id);
+  if(!d || !confirm(`¿Eliminar "${d.name}" del menú? Esta acción no se puede deshacer.`)) return;
+  dishes = dishes.filter(x=>x.id!==id);
+  saveData(); renderDishList(); renderMenu();
+  showToast(`🗑️ "${d.name}" eliminado`);
+}
+
+function renderDishList(){
+  const list = document.getElementById('adminDishList');
+  if(!list) return;
+  if(!dishes.length){ list.innerHTML='<div style="text-align:center;padding:2rem;color:var(--muted)">No hay platos. ¡Agrega el primero!</div>'; return; }
+  list.innerHTML = dishes.map(d=>{
+    const imgSrc = d.imgData || (IMGS[d.img]||'');
+    const secLabel = sections.find(s=>s.id===d.cat);
+    return `<div class="admin-dish-item">
+      <div class="adi-img"><img src="${imgSrc}" alt="${d.name}"></div>
+      <div class="adi-info">
+        <div class="adi-name">${d.name}</div>
+        <div class="adi-meta">
+          <span class="adi-cat">${secLabel ? secLabel.icon+' '+secLabel.name : d.cat}</span>
+          <span class="adi-price">S/. ${d.price}</span>
+          <span class="adi-avail ${d.available?'yes':'no'}">${d.available?'✓ Disponible':'✗ Agotado'}</span>
+          ${d.badge ? `<span class="adi-cat" style="background:var(--bg3)">${d.badge}</span>` : ''}
+        </div>
+      </div>
+      <div class="adi-actions">
+        <button class="adi-btn edit" onclick="editDish('${d.id}')">✏️ Editar</button>
+        <button class="adi-btn toggle ${d.available?'':'off'}" onclick="toggleDish('${d.id}')">
+          ${d.available ? '❌ Agotar' : '✅ Activar'}
+        </button>
+        <button class="adi-btn del" onclick="deleteDish('${d.id}')">🗑️</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ===== ADMIN SECCIONES =====
+function renderAdminSecciones(body){
+  body.innerHTML = `
+    <div style="margin-bottom:1.5rem">
+      <div style="font-weight:700;font-size:.95rem;color:var(--dark);margin-bottom:.4rem">📋 Secciones del Menú</div>
+      <div style="font-size:.8rem;color:var(--muted)">Activa o desactiva secciones según tu menú del día.</div>
+    </div>
+    <div class="section-list">
+      ${sections.map(s=>`
+      <div class="section-item">
+        <div class="si-left">
+          <div class="si-icon">${s.icon}</div>
+          <div>
+            <div class="si-name">${s.name}</div>
+            <div class="si-count">${dishes.filter(d=>d.cat===s.id).length} platos registrados</div>
+          </div>
+        </div>
+        <div class="si-actions">
+          <button class="adi-btn toggle ${s.enabled?'':'off'}" onclick="toggleSection('${s.id}')">
+            ${s.enabled ? '✓ Activa' : '✗ Oculta'}
+          </button>
+        </div>
+      </div>`).join('')}
+    </div>
+    <div class="admin-form" style="margin-top:1.5rem">
+      <div class="admin-form-title">➕ Agregar Nueva Sección</div>
+      <div class="aform-grid">
+        <div class="af"><label>Ícono (emoji)</label><input type="text" id="sec-icon" placeholder="🍜" maxlength="2" style="font-size:1.5rem;text-align:center"></div>
+        <div class="af"><label>Nombre de la sección</label><input type="text" id="sec-name" placeholder="Ej: Postres"></div>
+      </div>
+      <div class="aform-actions"><button class="abtn abtn-add" onclick="addSection()">➕ Crear Sección</button></div>
+    </div>`;
+}
+
+function toggleSection(id){
+  const s = sections.find(x=>x.id===id); if(!s) return;
+  s.enabled = !s.enabled;
+  saveData();
+  renderAdminSecciones(document.getElementById('adminBody'));
+  renderMenuTabs();
+  showToast(s.enabled ? `✅ "${s.name}" activada` : `👁️ "${s.name}" oculta del menú`);
+}
+
+function addSection(){
+  const icon = document.getElementById('sec-icon').value.trim() || '🍽️';
+  const name = document.getElementById('sec-name').value.trim();
+  if(!name){ showToast('⚠️ Escribe el nombre de la sección'); return; }
+  const id = name.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'');
+  if(sections.find(s=>s.id===id)){ showToast('⚠️ Ya existe una sección con ese nombre'); return; }
+  sections.push({id, name, icon, enabled:true});
+  saveData();
+  renderAdminSecciones(document.getElementById('adminBody'));
+  renderMenuTabs();
+  showToast(`✅ Sección "${name}" creada`);
+}
+
+function renderMenuTabs(){
+  const tabsEl = document.getElementById('menuTabs');
+  tabsEl.innerHTML = `<button class="mtab active" data-cat="all">🍽️ Todo</button>` +
+    sections.filter(s=>s.enabled).map(s=>`<button class="mtab" data-cat="${s.id}">${s.icon} ${s.name}</button>`).join('');
+  activeCat = 'all';
+  renderMenu();
+}
+
+// ===== ADMIN CONFIG =====
+function renderAdminConfig(body){
+  body.innerHTML = `
+    <div class="admin-form">
+      <div class="admin-form-title">🔧 Información del Restaurante</div>
+      <div class="aform-grid">
+        <div class="af"><label>Nombre del restaurante</label><input type="text" id="cfg-name" value="${config.name}"></div>
+        <div class="af"><label>Teléfono WhatsApp (con código país)</label><input type="text" id="cfg-phone" value="${config.phone}" placeholder="51999999999"></div>
+        <div class="af aform-full"><label>Dirección</label><input type="text" id="cfg-addr" value="${config.address}"></div>
+        <div class="af aform-full"><label>Horario</label><input type="text" id="cfg-hours" value="${config.hours}" placeholder="Lun–Dom: 12pm – 9pm"></div>
+      </div>
+      <div class="aform-actions"><button class="abtn abtn-save" onclick="saveConfig()">💾 Guardar Información</button></div>
+    </div>
+    <div class="admin-form" style="margin-top:1rem">
+      <div class="admin-form-title">🔐 Cambiar Contraseña del Panel</div>
+      <div class="aform-grid">
+        <div class="af"><label>Contraseña actual</label><input type="password" id="cfg-pass-old" placeholder="••••••••"></div>
+        <div class="af"><label>Nueva contraseña</label><input type="password" id="cfg-pass-new" placeholder="Mínimo 6 caracteres"></div>
+      </div>
+      <div class="aform-actions"><button class="abtn abtn-save" onclick="changePass()">🔐 Cambiar Contraseña</button></div>
+    </div>`;
+}
+
+function saveConfig(){
+  config.name = document.getElementById('cfg-name').value.trim() || config.name;
+  config.phone = document.getElementById('cfg-phone').value.trim() || config.phone;
+  config.address = document.getElementById('cfg-addr').value.trim() || config.address;
+  config.hours = document.getElementById('cfg-hours').value.trim() || config.hours;
+  saveData();
+  showToast('✅ Información actualizada');
+}
+
+function changePass(){
+  const old = document.getElementById('cfg-pass-old').value;
+  const nuevo = document.getElementById('cfg-pass-new').value;
+  if(old !== config.password){ showToast('⚠️ Contraseña actual incorrecta'); return; }
+  if(nuevo.length < 6){ showToast('⚠️ La nueva contraseña debe tener mínimo 6 caracteres'); return; }
+  config.password = nuevo;
+  saveData();
+  showToast('🔐 Contraseña actualizada exitosamente');
+  document.getElementById('cfg-pass-old').value='';
+  document.getElementById('cfg-pass-new').value='';
+}
+
+// ===== NAV & UI =====
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+function toggleDrawer(){document.getElementById('drawer').classList.toggle('open')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open')}
+
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+function sendReserva(){
+  const name=document.getElementById('fn').value.trim();
+  const phone=document.getElementById('fp').value.trim();
+  const date=document.getElementById('fd').value;
+  const hour=document.getElementById('fh').value;
+  const persons=document.getElementById('fp2').value;
+  const tipo=document.getElementById('ftipo').value;
+  const note=document.getElementById('fnote').value.trim();
+  if(!name||!tipo){alert('Por favor completa tu nombre y tipo de pedido.');return}
+  let msg=`¡Hola ${config.name}! 🍽️ Quiero hacer una reserva/pedido:\n\n`;
+  msg+=`👤 *Nombre:* ${name}\n`;
+  if(phone) msg+=`📱 *Teléfono:* ${phone}\n`;
+  msg+=`📋 *Tipo:* ${tipo}\n`;
+  if(persons) msg+=`👥 *Personas:* ${persons}\n`;
+  if(date) msg+=`📅 *Fecha:* ${date}\n`;
+  if(hour) msg+=`🕐 *Hora:* ${hour}\n`;
+  if(note) msg+=`🍴 *Pedido:* ${note}\n`;
+  msg+=`\n¿Pueden confirmar? ¡Gracias!`;
+  window.open('https://wa.me/'+config.phone+'?text='+encodeURIComponent(msg),'_blank');
+  showToast('✓ Redirigiendo a WhatsApp...');
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Init
+renderMenu();
+
+// ===== CART STATE =====
+let cart = [];
+let deliveryType = 'local';
+
+function openCart(){ 
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartBackdrop').classList.add('open');
+  renderCart();
+  // ensure delivery/time fields are in sync
+  const sel = document.querySelector('.ds-opt.selected');
+  if(sel) selectDeliveryType(sel, deliveryType);
+
+}
+function closeCart(){
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartBackdrop').classList.remove('open');
+}
+
+function selectDeliveryType(el, type){
+  document.querySelectorAll('.ds-opt').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected');
+  deliveryType = type;
+  const af = document.getElementById('addrField');
+  af.classList.toggle('show', type==='delivery');
+  const tf = document.getElementById('timeField');
+  const tg = document.getElementById('timeFieldGrid');
+  const dateInput = document.getElementById('cartDate');
+  const timeInput = document.getElementById('cartTime');
+  
+  if(type==='local'){
+    tf.classList.add('show');
+    tg.classList.remove('full');
+    dateInput.style.display='block';
+    timeInput.style.display='block';
+  } else if(type==='recoger'){
+    tf.classList.add('show');
+    tg.classList.add('full');
+    dateInput.style.display='none';
+    timeInput.style.display='block';
+  } else {
+    tf.classList.remove('show');
+  }
+}
+
+function addToCart(id){
+  const dish = dishes.find(d=>d.id===id); if(!dish||!dish.available) return;
+  const existing = cart.find(c=>c.id===id);
+  if(existing){ existing.qty++; }
+  else { cart.push({id, name:dish.name, price:dish.price, qty:1, imgData:dish.imgData||(IMGS[dish.img]||'')}); }
+  updateCartUI();
+  showToast(`🛒 "${dish.name}" agregado al pedido`);
+}
+
+function removeFromCart(id){
+  cart = cart.filter(c=>c.id!==id);
+  updateCartUI();
+  if(document.getElementById('cartDrawer').classList.contains('open')) renderCart();
+}
+
+function changeQty(id, delta){
+  const item = cart.find(c=>c.id===id); if(!item) return;
+  item.qty += delta;
+  if(item.qty <= 0){ cart = cart.filter(c=>c.id!==id); }
+  updateCartUI();
+  renderCart();
+}
+
+function getCartTotal(){ return cart.reduce((s,c)=>s+c.price*c.qty, 0); }
+function getCartCount(){ return cart.reduce((s,c)=>s+c.qty, 0); }
+
+function updateCartUI(){
+  const count = getCartCount();
+  const total = getCartTotal();
+  // FAB
+  const fab = document.getElementById('cartFab');
+  fab.classList.toggle('visible', count>0);
+  document.getElementById('cartFabBadge').textContent = count;
+  // Drawer header
+  document.getElementById('cartCountBadge').textContent = count + ' producto' + (count!==1?'s':'');
+  // Footer totals
+  document.getElementById('cartSubtotal').textContent = 'S/. '+total.toFixed(2);
+  document.getElementById('cartTotal').textContent = 'S/. '+total.toFixed(2);
+  document.getElementById('cartItemCount').textContent = count + ' producto' + (count!==1?'s':'');
+  // WA button
+  document.getElementById('cartWaBtn').disabled = count===0;
+  // Update dish buttons in menu
+  document.querySelectorAll('[data-dish-id]').forEach(el=>{
+    const id = el.dataset.dishId;
+    const item = cart.find(c=>c.id===id);
+    const qtyEl = el.closest('.dish-card')?.querySelector('.dish-qty');
+    if(qtyEl){
+      if(item && item.qty>0){
+        qtyEl.style.display='flex';
+        const nEl = qtyEl.querySelector('.dq-n');
+        if(nEl) nEl.textContent = item.qty;
+      } else if(qtyEl){
+        qtyEl.style.display='none';
+      }
+    }
+  });
+}
+
+function renderCart(){
+  const container = document.getElementById('cartItems');
+  if(cart.length===0){
+    container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🍽️</div><div class="cart-empty-text">Tu pedido está vacío</div><div class="cart-empty-sub">Agrega platos desde el menú</div></div>';
+    return;
+  }
+  container.innerHTML = cart.map(item=>`
+    <div class="cart-item">
+      <div class="ci-img"><img src="${item.imgData||''}" alt="${item.name}"></div>
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">S/. ${item.price.toFixed(2)} c/u</div>
+      </div>
+      <div class="ci-controls">
+        <button class="ci-qty-btn" onclick="changeQty('${item.id}',-1)">−</button>
+        <div class="ci-qty">${item.qty}</div>
+        <button class="ci-qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+        <span class="ci-remove" onclick="removeFromCart('${item.id}')">✕</span>
+      </div>
+      <div class="ci-total">S/. ${(item.price*item.qty).toFixed(2)}</div>
+    </div>`).join('');
+}
+
+function sendCartWA(){
+  const name = document.getElementById('cartName').value.trim();
+  const phone = document.getElementById('cartPhone').value.trim();
+  const note = document.getElementById('cartNote').value.trim();
+  const addr = document.getElementById('deliveryAddr')?.value.trim();
+  if(!name){ showToast('⚠️ Ingresa tu nombre para continuar'); document.getElementById('cartName').focus(); return; }
+  if(cart.length===0){ showToast('⚠️ Tu carrito está vacío'); return; }
+  if(deliveryType==='delivery' && !addr){ showToast('⚠️ Ingresa tu dirección de delivery'); document.getElementById('deliveryAddr').focus(); return; }
+  
+  const dateVal = document.getElementById('cartDate')?.value;
+  const timeVal = document.getElementById('cartTime')?.value;
+  let timeStr = '';
+  
+  if(deliveryType==='local' && dateVal && timeVal){
+    timeStr = `📅 *Reserva para:* ${dateVal} a las ${timeVal}`;
+  } else if(deliveryType==='recoger' && timeVal){
+    timeStr = `🕒 *Hora de recojo:* ${timeVal}`;
+  }
+
+  const typeLabels = {local:'🍽️ Comer en el local', delivery:'🛵 Delivery a domicilio', recoger:'🏃 Recoger en tienda'};
+  let msg = `¡Hola ${config.name}! 😊 Quiero hacer un pedido:
+
+`;
+  msg += `👤 *Cliente:* ${name}
+`;
+  if(phone) msg += `📱 *Teléfono:* ${phone}
+`;
+  msg += `📋 *Tipo:* ${typeLabels[deliveryType]}
+`;
+  if(deliveryType==='delivery' && addr) msg += `📍 *Dirección:* ${addr}
+`;
+  if(timeStr) msg += `${timeStr}
+`;
+  msg += `
+🍴 *Mi pedido:*
+`;
+  cart.forEach(item=>{ msg += `  • ${item.qty}x ${item.name} — S/. ${(item.price*item.qty).toFixed(2)}
+`; });
+  msg += `
+💰 *Total: S/. ${getCartTotal().toFixed(2)}*
+`;
+  if(note) msg += `
+📝 *Nota:* ${note}
+`;
+  msg += `
+¿Pueden confirmar mi pedido? ¡Gracias! 🙏`;
+
+  window.open('https://wa.me/'+config.phone+'?text='+encodeURIComponent(msg),'_blank');
+  showToast('✓ Pedido enviado por WhatsApp');
+}
+
+// ===== PATCH renderMenu to add cart buttons =====
+const _origRenderMenu = renderMenu;
+renderMenu = function(){
+  _origRenderMenu();
+  // After rendering, patch dish buttons
+  document.querySelectorAll('.dish-card').forEach(card=>{
+    const btn = card.querySelector('.dish-btn');
+    if(!btn) return;
+    // Get dish id from onclick or find by name
+    const dishName = card.querySelector('.dish-name')?.textContent;
+    const dish = dishes.find(d=>d.name===dishName);
+    if(!dish || !dish.available) return;
+    const foot = card.querySelector('.dish-foot');
+    if(!foot) return;
+    // Replace "Pedir" link with add-to-cart
+    btn.remove();
+    const cartBtn = document.createElement('button');
+    cartBtn.className = 'dish-add-btn';
+    cartBtn.dataset.dishId = dish.id;
+    cartBtn.innerHTML = '🛒 Agregar';
+    cartBtn.onclick = ()=>addToCart(dish.id);
+    foot.appendChild(cartBtn);
+    // Add qty controls
+    const qtyEl = document.createElement('div');
+    qtyEl.className = 'dish-qty';
+    const inCart = cart.find(c=>c.id===dish.id);
+    qtyEl.style.display = inCart ? 'flex' : 'none';
+    qtyEl.innerHTML = `
+      <button class="dq-btn" onclick="changeQty('${dish.id}',-1)">−</button>
+      <span class="dq-n">${inCart?inCart.qty:0}</span>
+      <button class="dq-btn" onclick="changeQty('${dish.id}',1)">+</button>`;
+    card.querySelector('.dish-body').appendChild(qtyEl);
+  });
+  updateCartUI();
+};
+
+
+</script>
+
+</body>
+</html>
